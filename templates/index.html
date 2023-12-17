@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Price Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8pD1TDAHa5t+2j9Q6W0eE1FpAFETK&"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha384-w4mcpeSc5pAq3ZlMeGEn5/CvR8ZNisjhpslJ8Y5t6FFWf/xJcLoM/FH9qqU4I5qw"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha384-w4mcpeSc5pAq3ZlMeGEn5/CvR8ZNisjhpslJ8Y5t6FFWf/xJcLoM/FH9qqU4I5qw"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .navbar {
+        background-color: #343a40;
+        color: white;
+      }
+
+      .navbar-brand {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      .navbar-toggler-icon {
+        background-color: white;
+      }
+
+      .nav-link {
+        font-size: 1.2em;
+      }
+
+      #stock-info {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      #footer {
+        margin-top: 50px;
+        text-align: center;
+        background-color: #343a40;
+        color: white;
+        padding: 10px 0;
+      }
+
+      .carousel-item img {
+        max-height: 400px;
+        object-fit: cover;
+      }
+
+      /* Add styles for the carousel */
+      #stock-carousel {
+        margin-top: 20px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        color: #343a40;
+      }
+
+      .carousel-indicators {
+        bottom: -30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Update your navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-chart-line"></i> Stock Prediction
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">
+                <i class="fas fa-home"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">
+                <i class="fas fa-info-circle"></i> About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="fas fa-envelope"></i> Contact
+              </a>
+            </li>
+            <!-- Add more navigation items as needed -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="mt-4">Stock Price Prediction</h1>
+
+      <form id="stockForm">
+        <div class="mb-3">
+          <label for="stockSymbol" class="form-label"
+            >Enter Stock Symbol:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="stockSymbol"
+            name="stockSymbol"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Get Stock Data</button>
+      </form>
+
+      <div id="stock-info" class="mt-4">
+        <p id="stock-price">Current Stock Price: Loading...</p>
+        <p id="prediction">Recommendation: Loading...</p>
+        <p id="status">The Stock is in..: Loading...</p>
+      </div>
+    </div>
+
+    <!-- Carousel with stock market images -->
+    <div
+      id="stock-carousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="2000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://www.callcentrehelper.com/images/stories/2022/01/
+stock-exchange-177498669-760.jpg"
+            class="d-block w-100"
+            alt="Stock Market 1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.callcentrehelper.com/images/stories/2022/01/stock-exchange-177498669-760.jpg"
+            class="d-block w-100"
+            alt="Stock Market 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://image.cnbcfm.com/api/v1/image/107231654-1682540548797-aa4_img_100_99_112_1917665_1000-1682540460759.jpg?v=1682540696"
+            class="d-block w-100"
+            alt="Stock Market 3"
+          />
+        </div>
+        <!-- Add more carousel items as needed -->
+      </div>
+      <!-- Add right and left carousel control buttons -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#stock-carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#stock-carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="footer">
+      <p>&copy; 2023 Stock Prediction App</p>
+    </div>
+  </body>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-SvlArO2L8pAs.BOx5yKzQxEVmglHbYKAAub60V+5B2ZBDuL18sQop5KtLMIzQkpv"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-gJlA6ZBAEmnemEtVg5wDfGpKf2FjkLYivHp4s8+S3zPZoazT+9aUiizp1gOE6z"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    async function fetchData(stockSymbol) {
+      try {
+        const response = await fetch("/get_stock_data", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `stockSymbol=${stockSymbol}`,
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        document.getElementById(
+          "stock-price"
+        ).innerText = `Current Stock Price: $${data.stockPrice}`;
+        document.getElementById(
+          "prediction"
+        ).innerText = `Prediction: ${data.prediction.recommendation} (${data.prediction.detail})`;
+
+        // Display status as "Profit" or "Loss"
+        const statusElement = document.getElementById("status");
+        const status = data.prediction.status.toLowerCase();
+        statusElement.innerText = `Status: ${
+          status.charAt(0).toUpperCase() + status.slice(1)
+        }`;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        document.getElementById("stock-price").innerText =
+          "Error fetching data";
+        document.getElementById("prediction").innerText = "";
+        document.getElementById("status").innerText = "";
+      }
+    }
+
+    document
+      .getElementById("stockForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const stockSymbol = document.getElementById("stockSymbol").value;
+        fetchData(stockSymbol);
+      });
+
+    setInterval(() => {
+      const stockSymbol = document.getElementById("stockSymbol").value;
+      fetchData(stockSymbol);
+    }, 5000); // Fetch data every 5 seconds
+  </script>
+</html>
