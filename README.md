@@ -46,12 +46,7 @@ Configure the parameters in config.json.
 Run the main script to obtain live data and make predictions.
 View the predicted stock prices and evaluation metrics.
 Contributing
-Feel free to contribute by submitting bug reports, feature requests, or even enhancements. Follow the standard GitHub flow for pull requests.
-
-**License**
-
-
-This project is licensed under the MIT License.
+Feel free to contribute by submitting bug reports, feature requests, or even enhancements. Follow the standard GitHub flow for pull requests
 
 **Acknowledgments**
 
