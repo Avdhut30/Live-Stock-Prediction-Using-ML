@@ -22,8 +22,7 @@ Make sure you have the following installed:
 
 Required Python packages listed in the requirements.txt file.
 Getting Started
-Clone the repository: git clone https://github.com/Avdhut30/live-stock-price-prediction-using-ml.
-git
+Clone the repository: https://github.com/Avdhut30/Live-Stock-Prediction-Using-ML.git
 Install dependencies: pip install -r requirements.txt
 Run the main script: python predict_stock_price.py
 Configuration
